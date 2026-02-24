@@ -213,7 +213,6 @@ html, body, [data-testid="stApp"] {
 /* Hide default streamlit branding */
 #MainMenu { visibility: hidden; }
 footer    { visibility: hidden; }
-header    { visibility: hidden; }
 </style>
 """
 
