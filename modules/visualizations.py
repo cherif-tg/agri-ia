@@ -45,7 +45,7 @@ def _generate_sample_data() -> pd.DataFrame:
 
 def render() -> None:
     """Affiche la page de visualisations."""
-    st.markdown('<div class="section-title">📊 Visualisations & Analyses</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title"> Visualisations & Analyses</div>', unsafe_allow_html=True)
     st.markdown("Explorez les données historiques et les tendances agricoles du Togo.")
     st.markdown("<br>", unsafe_allow_html=True)
 
@@ -54,8 +54,8 @@ def render() -> None:
     tab_regions, tab_climat, tab_calendrier, tab_map = st.tabs([
         "🗺 Tendances Régionales",
         "🌧 Impact Climatique",
-        "📅 Calendrier Cultural",
-        "📍 Carte des Rendements",
+        " Calendrier Cultural",
+        " Carte des Rendements",
     ])
 
     # ── Onglet 1 : Tendances régionales ──────────────────────────────────────

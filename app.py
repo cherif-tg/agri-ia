@@ -67,7 +67,7 @@ def _init_session() -> None:
     defaults = {
         "historique":     [],
         "chat_messages":  [],
-        "current_page":   "🏠 Accueil",
+        "current_page":   " Accueil",
     }
     for key, val in defaults.items():
         if key not in st.session_state:
@@ -108,14 +108,14 @@ def _render_sidebar() -> str:
 
         # Navigation
         pages = [
-            "🏠 Accueil",
-            "🌾 Prévision",
-            "📊 Visualisations",
-            "📂 Analyse de fichiers",
-            "🤖 AgroBot",
-            "📋 Historique",
-            "📈 Rapports",
-            "ℹ️ À propos",
+            " Accueil",
+            " Prévision",
+            " Visualisations",
+            " Analyse de fichiers",
+            " AgroBot",
+            " Historique",
+            " Rapports",
+            "ℹ À propos",
         ]
 
         page = st.radio(
@@ -130,7 +130,7 @@ def _render_sidebar() -> str:
         groq_status = "✅ Configurée" if GROQ_API_KEY else "❌ Non configurée"
         st.markdown(f"""
         <div style="font-size:.78rem; color:rgba(255,255,255,.7); line-height:1.8;">
-            <div><strong style="color:#fff;">🤖 API Groq :</strong> {groq_status}</div>
+            <div><strong style="color:#fff;"> API Groq :</strong> {groq_status}</div>
             <div><strong style="color:#fff;">🌦 Météo :</strong> Open-Meteo (gratuit)</div>
         </div>""", unsafe_allow_html=True)
 
@@ -145,14 +145,14 @@ def _render_sidebar() -> str:
 # ─────────────────────────────────────────────────────────────────────────────
 
 _PAGE_SUBTITLES = {
-    "🏠 Accueil":            "Tableau de bord principal",
-    "🌾 Prévision":          "Prévision personnalisée de rendement",
-    "📊 Visualisations":     "Analyse des données et tendances",
-    "📂 Analyse de fichiers": "Import et analyse de vos données (RAG)",
-    "🤖 AgroBot":            "Assistant IA agricole – LLaMA 3.3-70B",
-    "📋 Historique":         "Historique de vos prévisions",
-    "📈 Rapports":           "Rapports et performance du modèle",
-    "ℹ️ À propos":           "Technologies et informations",
+    " Accueil":            "Tableau de bord principal",
+    " Prévision":          "Prévision personnalisée de rendement",
+    " Visualisations":     "Analyse des données et tendances",
+    " Analyse de fichiers": "Import et analyse de vos données (RAG)",
+    " AgroBot":            "Assistant IA agricole – LLaMA 3.3-70B",
+    " Historique":         "Historique de vos prévisions",
+    " Rapports":           "Rapports et performance du modèle",
+    "ℹ À propos":           "Technologies et informations",
 }
 
 def _render_header(page: str) -> None:
@@ -196,12 +196,12 @@ def _page_about() -> None:
     with tab2:
         cols = st.columns(3)
         techs = [
-            ("🤖 Machine Learning", "XGBoost + LightGBM\nOptimisation Optuna\nValidation croisée 5-fold"),
-            ("📊 Visualisation", "Plotly Express & Graph Objects\nCarte interaktive\nCharts interactifs"),
-            ("🌐 Framework", "Streamlit 1.32+\nPython 3.10+\nArchitecture modulaire"),
+            (" Machine Learning", "XGBoost + LightGBM\nOptimisation Optuna\nValidation croisée 5-fold"),
+            (" Visualisation", "Plotly Express & Graph Objects\nCarte interaktive\nCharts interactifs"),
+            (" Framework", "Streamlit 1.32+\nPython 3.10+\nArchitecture modulaire"),
             ("🌦 Météo", "Open-Meteo API (gratuit)\nDonnées temps réel + historiques\nFallback automatique"),
-            ("🤖 Chatbot", "Groq API\nLLaMA 3.3-70B Versatile\nHistorique de conversation"),
-            ("📂 RAG", "CSV / Excel / PDF\nDétection auto des colonnes\nPrévisions batch"),
+            (" Chatbot", "Groq API\nLLaMA 3.3-70B Versatile\nHistorique de conversation"),
+            (" RAG", "CSV / Excel / PDF\nDétection auto des colonnes\nPrévisions batch"),
         ]
         for i, (title, desc) in enumerate(techs):
             with cols[i % 3]:
@@ -217,8 +217,8 @@ def _page_about() -> None:
         <div class="card">
             <h4>Contact & Support</h4>
             <ul>
-                <li>📧 Email : <a href="mailto:tengacherif@gmail.com">tengacherif@gmail.com</a></li>
-                <li>📱 Tél : +228 71518061</li>
+                <li> Email : <a href="mailto:tengacherif@gmail.com">tengacherif@gmail.com</a></li>
+                <li> Tél : +228 71518061</li>
             </ul>
         </div>""", unsafe_allow_html=True)
 
@@ -255,35 +255,35 @@ def main() -> None:
     _render_header(page)
 
     # Routing
-    if page == "🏠 Accueil":
+    if page == " Accueil":
         from modules.home import render
         render()
 
-    elif page == "🌾 Prévision":
+    elif page == " Prévision":
         from modules.prediction import render
         render(model)
 
-    elif page == "📊 Visualisations":
+    elif page == " Visualisations":
         from modules.visualizations import render
         render()
 
-    elif page == "📂 Analyse de fichiers":
+    elif page == " Analyse de fichiers":
         from modules.rag import render
         render(model)
 
-    elif page == "🤖 AgroBot":
+    elif page == " AgroBot":
         from modules.chatbot import render
         render()
 
-    elif page == "📋 Historique":
+    elif page == " Historique":
         from modules.history import render
         render()
 
-    elif page == "📈 Rapports":
+    elif page == " Rapports":
         from modules.report import render
         render(model)
 
-    elif page == "ℹ️ À propos":
+    elif page == "ℹ À propos":
         _page_about()
 
 

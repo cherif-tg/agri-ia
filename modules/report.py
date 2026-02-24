@@ -18,13 +18,13 @@ from modules.styles import kpi_card
 
 def render(model) -> None:
     """Affiche la page de rapports."""
-    st.markdown('<div class="section-title">📊 Rapports & Synthèse</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title"> Rapports & Synthèse</div>', unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
     tab_perf, tab_synthese, tab_modele = st.tabs([
-        "📋 Synthèse des prévisions",
+        " Synthèse des prévisions",
         "🗓 Rapport mensuel",
-        "🤖 Performance du modèle",
+        " Performance du modèle",
     ])
 
     with tab_perf:

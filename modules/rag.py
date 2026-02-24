@@ -25,7 +25,7 @@ from core.data_processor import (
 
 def render(model) -> None:
     """Affiche la page d'analyse de fichiers (RAG)."""
-    st.markdown('<div class="section-title">📂 Analyse de Fichiers (RAG)</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title"> Analyse de Fichiers (RAG)</div>', unsafe_allow_html=True)
     st.markdown(
         "Importez vos propres données agricoles (CSV, Excel, PDF). "
         "Le système détecte automatiquement les colonnes, génère des prévisions et produit des visualisations."
@@ -64,7 +64,7 @@ def render(model) -> None:
 
 def _handle_pdf(text: str) -> None:
     """Analyse un PDF via Groq et affiche une synthèse."""
-    st.subheader("📄 Contenu extrait du PDF")
+    st.subheader(" Contenu extrait du PDF")
 
     with st.expander("Voir le texte brut extrait", expanded=False):
         st.text(text[:4000] + ("…" if len(text) > 4000 else ""))
@@ -77,7 +77,7 @@ def _handle_pdf(text: str) -> None:
         st.warning("Clé GROQ_API_KEY non configurée. Ajoutez-la dans votre fichier `.env` pour l'analyse IA.")
         return
 
-    if st.button("🤖 Analyser ce document avec l'IA", use_container_width=True):
+    if st.button(" Analyser ce document avec l'IA", use_container_width=True):
         with st.spinner("Analyse IA en cours…"):
             analysis = _groq_analyze_pdf(text)
         if analysis:
@@ -129,7 +129,7 @@ def _handle_tabular(df: pd.DataFrame, model, filename: str) -> None:
     st.markdown("---")
 
     # 2. Détection automatique des colonnes
-    st.markdown("#### 🔍 Détection des colonnes")
+    st.markdown("####  Détection des colonnes")
     col_mapping = detect_columns(df)
 
     st.info(
@@ -156,7 +156,7 @@ def _handle_tabular(df: pd.DataFrame, model, filename: str) -> None:
                 )
                 corrected_mapping[std_col] = selected if selected != "(aucune)" else None
 
-        submit_map = st.form_submit_button("✅ Valider et analyser", use_container_width=True, type="primary")
+        submit_map = st.form_submit_button(" Valider et analyser", use_container_width=True, type="primary")
 
     if not submit_map:
         return
@@ -170,12 +170,12 @@ def _handle_tabular(df: pd.DataFrame, model, filename: str) -> None:
             st.warning(w)
 
     # 4. Statistiques descriptives
-    st.markdown("#### 📊 Statistiques descriptives")
+    st.markdown("####  Statistiques descriptives")
     stats = get_stats_summary(df_clean)
     _display_stats(stats)
 
     # 5. Visualisations auto
-    st.markdown("#### 📈 Visualisations automatiques")
+    st.markdown("####  Visualisations automatiques")
     _auto_visualize(df_clean)
 
     # 6. Prévisions batch (si modèle chargé et colonnes OK)
@@ -184,7 +184,7 @@ def _handle_tabular(df: pd.DataFrame, model, filename: str) -> None:
     has_all = all(c in df_clean.columns for c in required_for_pred)
 
     if has_all and model.is_trained():
-        st.markdown("#### 🌾 Prévisions de rendement sur vos données")
+        st.markdown("####  Prévisions de rendement sur vos données")
         _batch_predict(df_clean, model)
     elif not has_all:
         st.info("Pour obtenir des prévisions, mappez toutes les colonnes requises (région, culture, sol, surface, pluie, température).")
@@ -311,7 +311,7 @@ def _show_help() -> None:
     """Affiche la documentation d'aide sur les formats acceptés."""
     st.markdown("""
     <div class="card card-green">
-        <h4>📌 Formats acceptés et colonnes attendues</h4>
+        <h4>! Formats acceptés et colonnes attendues</h4>
         <p>Pour obtenir des <strong>prévisions automatiques</strong>, votre fichier doit contenir les colonnes suivantes
         (les noms peuvent varier, le système les détectera automatiquement) :</p>
         <table style="width:100%; border-collapse:collapse; font-size:.9rem;">

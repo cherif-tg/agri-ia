@@ -16,14 +16,14 @@ from modules.styles import kpi_card
 
 def render() -> None:
     """Affiche la page d'historique."""
-    st.markdown('<div class="section-title">📋 Historique des Prévisions</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title"> Historique des Prévisions</div>', unsafe_allow_html=True)
 
     historique = st.session_state.get("historique", [])
 
     if not historique:
         st.markdown("""
         <div class="card" style="text-align:center; padding:3rem; color:#757575;">
-            <div style="font-size:3rem;">📋</div>
+            <div style="font-size:3rem;"></div>
             <h3>Aucune prévision enregistrée</h3>
             <p>Rendez-vous dans <strong>🌾 Prévision</strong> pour générer votre première prévision.</p>
         </div>""", unsafe_allow_html=True)
@@ -51,7 +51,7 @@ def render() -> None:
     st.markdown("<br>", unsafe_allow_html=True)
 
     # ── Filtres ────────────────────────────────────────────────────────────────
-    with st.expander("🔍 Filtrer l'historique"):
+    with st.expander(" Filtrer l'historique"):
         f1, f2, f3 = st.columns(3)
         with f1:
             cultures_dispo = df["culture"].unique().tolist()

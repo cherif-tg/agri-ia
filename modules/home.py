@@ -41,19 +41,19 @@ def render() -> None:
     st.markdown("<br>", unsafe_allow_html=True)
 
     features = [
-        ("🌾", "Prévision de rendement",
+        ("", "Prévision de rendement",
          "Estimation précise du rendement (t/ha) et de la production totale à partir "
          "des données de votre exploitation. Modèle XGBoost + LightGBM optimisé."),
-        ("📊", "Visualisations & Analyses",
+        ("", "Visualisations & Analyses",
          "Graphiques interactifs : tendances régionales, impact climatique, calendrier "
          "cultural, carte des rendements."),
-        ("📂", "Analyse de fichiers (RAG)",
+        ("", "Analyse de fichiers (RAG)",
          "Importez vos propres fichiers CSV, Excel ou PDF. Le système détecte "
          "automatiquement les colonnes et génère des prévisions et visualisations."),
-        ("🤖", "AgroBot – Assistant IA",
+        ("", "AgroBot – Assistant IA",
          "Chatbot alimenté par Groq (LLaMA 3.3-70B). Posez vos questions en français "
          "sur l'agronomie, les cultures, la météo et les prévisions."),
-        ("📋", "Historique & Rapports",
+        ("", "Historique & Rapports",
          "Consultez toutes vos prévisions enregistrées, exportez-les en CSV, "
          "suivez l'évolution de vos rendements dans le temps."),
     ]
@@ -75,12 +75,12 @@ def render() -> None:
     st.markdown("""
     <div class="card">
         <ol style="margin:0; padding-left:1.2rem; line-height:2;">
-            <li>Allez dans <strong>🌾 Prévision</strong> et renseignez les informations de votre exploitation.</li>
+            <li>Allez dans <strong> Prévision</strong> et renseignez les informations de votre exploitation.</li>
             <li>Le système récupère automatiquement la météo en temps réel de votre région.</li>
             <li>Obtenez votre prévision de rendement, le niveau de risque et les recommandations.</li>
-            <li>Exportez vos résultats ou consultez les <strong>📊 Visualisations</strong>.</li>
-            <li>Utilisez <strong>📂 Analyse de fichiers</strong> pour importer vos propres données.</li>
-            <li>Posez vos questions à <strong>🤖 AgroBot</strong>.</li>
+            <li>Exportez vos résultats ou consultez les <strong> Visualisations</strong>.</li>
+            <li>Utilisez <strong> Analyse de fichiers</strong> pour importer vos propres données.</li>
+            <li>Posez vos questions à <strong> AgroBot</strong>.</li>
         </ol>
     </div>
     """, unsafe_allow_html=True)

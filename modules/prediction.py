@@ -37,7 +37,7 @@ def render(model) -> None:
 
         # Colonne 1 : Exploitation
         with col_form1:
-            st.markdown("#### 🏡 Exploitation")
+            st.markdown("#### Exploitation")
             region  = st.selectbox("Région", REGIONS, help="Région agricole concernée")
             culture = st.selectbox("Culture", CULTURES, help="Type de culture à analyser")
             type_sol = st.selectbox("Type de sol", TYPES_SOL)
@@ -46,7 +46,7 @@ def render(model) -> None:
 
         # Colonne 2 : Pratiques agricoles
         with col_form2:
-            st.markdown("#### 🌿 Pratiques")
+            st.markdown("####  Pratiques")
             irrigation   = st.selectbox("Irrigation",
                                          ["Aucun", "Traditionnel", "Goutte à goutte", "Aspersion"])
             fertilisation = st.selectbox("Fertilisation",
@@ -57,7 +57,7 @@ def render(model) -> None:
 
         # Colonne 3 : Données climatiques
         with col_form3:
-            st.markdown("#### 🌦️ Données climatiques")
+            st.markdown("####  Données climatiques")
 
             if use_realtime:
                 with st.spinner(f"Récupération météo {region}..."):
@@ -89,7 +89,7 @@ def render(model) -> None:
                     f"💨 Vent: **{weather['vent_kmh']} km/h**"
                 )
 
-        submitted = st.form_submit_button("🔍 Générer la Prévision", use_container_width=True,
+        submitted = st.form_submit_button(" Générer la Prévision", use_container_width=True,
                                            type="primary")
 
     # ── Résultats ─────────────────────────────────────────────────────────────
@@ -127,7 +127,7 @@ def _display_results(
 ) -> None:
     """Affiche les résultats de la prévision."""
     st.markdown("---")
-    st.markdown('<div class="section-title">📈 Résultats de la Prévision</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">Résultats de la Prévision</div>', unsafe_allow_html=True)
 
     rendement    = result["rendement_t_ha"]
     production   = result["production_total_t"]
@@ -212,7 +212,7 @@ def _display_results(
         st.plotly_chart(fig2, use_container_width=True)
 
     # ── Recommandations ────────────────────────────────────────────────────────
-    st.markdown('<div class="section-title">💡 Recommandations</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title"> Recommandations</div>', unsafe_allow_html=True)
 
     recos = _build_recommendations(rendement, pluviometrie, temperature_moy,
                                     irrigation, fertilisation, culture, niveau_risque)
@@ -250,7 +250,7 @@ def _display_results(
             use_container_width=True,
         )
     with cb2:
-        if st.button("➕ Nouvelle prévision", use_container_width=True):
+        if st.button("+ Nouvelle prévision", use_container_width=True):
             st.rerun()
 
 

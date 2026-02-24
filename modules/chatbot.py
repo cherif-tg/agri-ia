@@ -16,7 +16,7 @@ from config import GROQ_API_KEY, GROQ_MODEL, GROQ_MAX_TOKENS, GROQ_TEMPERATURE, 
 
 def render() -> None:
     """Affiche la page du chatbot AgroBot."""
-    st.markdown('<div class="section-title">🤖 AgroBot – Assistant Agricole IA</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title"> AgroBot – Assistant Agricole IA</div>', unsafe_allow_html=True)
     st.markdown(
         "Posez vos questions en français sur l'agronomie, les cultures togolaises, "
         "les conditions climatiques, la gestion des sols, ou l'interprétation de vos prévisions."
