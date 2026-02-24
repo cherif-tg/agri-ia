@@ -1,70 +1,50 @@
-# Fichiers et dossiers à ignorer
+# ─── Secrets & Variables d'environnement (NE JAMAIS POUSSER) ─────────────────
+.env
+.streamlit/secrets.toml
 
-# Python
+# ─── Python ───────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
+*.pyo
+*.pyd
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
 
-# Environnements virtuels
+# ─── Environnements virtuels ──────────────────────────────────────────────────
 venv/
-ENV/
+.venv/
 env/
-.venv
+.env/
+ENV/
+*.egg-info/
+dist/
+build/
 
-# IDE
+# ─── Tests & Coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+*.xml
+
+# ─── Dossiers temporaires ─────────────────────────────────────────────────────
+temp/*
+!temp/.gitkeep
+
+# ─── IDE ──────────────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
+
+# ─── OS ───────────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Streamlit
-.streamlit/secrets.toml
-.streamlit/__pycache__/
+# ─── Jupyter ──────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
 
-# Base de données
-data/*.db
-data/predictions.db
-
-# Logs
-data/app.log
-data/app.log.*
-
-# Fichiers temporaires
-*.tmp
-*.temp
-.tmp/
-.cache/
-
-# Dossiers spécifiques
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Tokens et secrets
-.env
-.env.local
-secrets.toml
-
-# Fichiers volumineux
-*.pkl.bak
-*.csv.bak
+# ─── Fichiers volumineux optionnels ───────────────────────────────────────────
+# (décommenter si le modèle dépasse 100 MB)
+# models/*.pkl
