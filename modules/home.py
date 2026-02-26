@@ -105,5 +105,5 @@ def render() -> None:
                 <div class="kpi-label">{region}</div>
                 <div style="font-size:.85rem; color:#388E3C; font-weight:600;">{info['ville']}</div>
                 <div class="kpi-sub">🌧 {info['pluie']}</div>
-                <div class="kpi-sub">🪨 {info['sol']}</div>
+                <div class="kpi-sub"> {info['sol']}</div>
             </div>""", unsafe_allow_html=True)

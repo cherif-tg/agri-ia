@@ -31,7 +31,7 @@ import streamlit as st
 # ── Configuration de la page (DOIT être en premier) ──────────────────────────
 st.set_page_config(
     page_title="AgroPredict Togo",
-    page_icon="🌾",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
